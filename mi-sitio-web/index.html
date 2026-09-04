@@ -1,100 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <title>Portafolio Personal - Ingeniería & Desarrollo</title>
-   
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
-        header { background: #1a1a2e; color: #fff; padding: 1rem 2rem; }
-        nav ul { list-style: none; display: flex; gap: 1.5rem; padding: 0; }
-        nav a { color: #4ecca3; text-decoration: none; font-weight: bold; }
-        main { padding: 2rem; max-width: 900px; margin: auto; }
-        section { margin-bottom: 2.5rem; }
-        img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 10px; }
-        form { display: flex; flexDirection: column; gap: 10px; max-width: 400px; }
-        input, textarea, button { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-        button { background: #4ecca3; border: none; font-weight: bold; cursor: pointer; }
-        footer { background: #1a1a2e; color: #fff; text-align: center; padding: 1rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título de la página -->
+  <title>Portafolio Profesional | IT & Software Engineering</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  
+  <!-- 1. ENCABEZADO Y NAVEGACIÓN PRINCIPAL       -->
+  
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-code">&lt;/&gt;</span>
+      <span class="brand-name">DevPortfolio</span>
+    </div>
+
+    <!-- Menú de navegación con enlaces -->
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre Mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <!-- 2. CONTENIDO PRINCIPAL                     -->
+  
+  <main>
+
+    <!-- SECCIÓN 1: HERO / PRESENTACIÓN -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-content">
+        
+        <h1>Ingeniería de Software &amp; Soluciones Digitales</h1>
+        
+        <p>
+          Bienvenido a mi espacio personal de desarrollo e infraestructura. Me especializo en construir 
+          arquitecturas escalables, automatización de sistemas, redes seguras y aplicaciones web 
+          diseñadas con altos estándares de rendimiento y buenas prácticas.
+        </p>
+        <div class="hero-cta">
+          <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+          <a href="https://github.com/James-gosling" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Perfil GitHub</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <!-- Imagen hero.jpg -->
+        <img src="assets/hero.jpg" alt="Entorno de ingeniería y hardware tecnológico" class="featured-image">
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: SOBRE MÍ Y STACK TÉCNICO -->
+    <section id="sobre-mi" class="about-section">
+      
+      <h2>Perfil Profesional &amp; Especialidades</h2>
+      
+      <p>
+        Mi enfoque técnico combina el desarrollo full-stack con la ciberseguridad aplicada, 
+        diseño de redes y despliegue en entornos virtualizados y contenedores. Busco siempre la 
+        eficiencia operativa, la estabilidad de los servicios y una clara arquitectura modular.
+      </p>
+
+      <!-- Lista de competencias  -->
+      <div class="tech-stack">
+        <h3>Áreas Clave de Dominio Técnico:</h3>
+        <ul class="skills-list">
+          <li><strong>Desarrollo Web &amp; Backend:</strong> Python, JavaScript moderno, APIs REST y bases de datos relacionales.</li>
+          <li><strong>DevOps &amp; Entornos:</strong> Docker, orquestación de contenedores, Linux y flujos CI/CD con Git.</li>
+          <li><strong>Redes &amp; Infraestructura:</strong> Arquitectura TCP/IP, segmentación VLAN, routing y hardening de servidores.</li>
+          <li><strong>Ciberseguridad:</strong> Análisis de vulnerabilidades, principios Secure by Design y auditorías de configuración.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: PROYECTOS DESTACADOS -->
+    <section id="proyectos" class="projects-section">
+      
+      <h2>Proyectos &amp; Arquitectura</h2>
+      
+      <p>
+        Una muestra representativa de iniciativas aplicadas donde integro desarrollo de software, 
+        persistencia de datos y despliegue reproducible en servidores locales y en la nube.
+      </p>
+
+      <div class="project-card">
+        <div class="card-image">
+          <!-- Imagen project.jpg -->
+          <img src="assets/project.jpg" alt="Captura de dashboard de arquitectura de sistemas">
+        </div>
+        <div class="card-body">
+          <h3>Plataforma Modular de Monitoreo &amp; Servicios</h3>
+          <p>
+            Desarrollo de un panel de control con interfaz reactiva, base de datos desacoplada y 
+            servicios enlazados mediante API para la gestión eficiente de recursos tecnológicos.
+          </p>
+          <a href="https://github.com/James-gosling/Portafolio-personal" target="_blank" rel="noopener noreferrer" class="link-inline">Explorar repositorio del proyecto &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="contact-section">
+      <h2>Ponte en Contacto</h2>
+      <p class="section-desc">¿Tienes un proyecto en mente o buscas colaborar en infraestructura y software? Envíame un mensaje directo.</p>
+
+      <!-- Formulario de contacto -->
+      <form action="#" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Alex Mercer" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="nombre@correo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí los detalles de tu consulta o propuesta..." required></textarea>
+        </div>
+
+        
+        <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- 3. PIE DE PÁGINA                           -->
     
-    <!-- ENCABEZADO Y MENÚ DE NAVEGACIÓN           -->
-    
-    <header>
-        <h1>Mi Portafolio Profesional</h1>
-        <nav>
-            <ul>
-                <!-- Enlaces requeridos (1 y 2) -->
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    
-    <!-- CONTENIDO PRINCIPAL                        -->
-    
-    <main>
-
-        <!-- SECCIÓN 1: SOBRE MÍ -->
-        <section id="sobre-mi">
-            <!-- Encabezado 2 -->
-            <h2>Sobre mí</h2>
-            <!-- Párrafo 1 -->
-            <p>Bienvenido a mi sitio web. Soy estudiante de ingeniería apasionado por el desarrollo de software, la infraestructura de redes y la implementación de soluciones tecnológicas modernas.</p>
-            <!-- Imagen 1 -->
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600" alt="Espacio de trabajo con laptop y código">
-        </section>
-
-        <!-- SECCIÓN 2: PROYECTOS Y HABILIDADES -->
-        <section id="proyectos">
-            <!-- Encabezado 3 -->
-            <h2>Proyectos y Habilidades</h2>
-            <!-- Párrafo 2 -->
-            <p>A lo largo de mi formación he colaborado en diversos proyectos técnicos enfocados en automatización, arquitectura web y contenedores:</p>
-            
-            <!-- Lista ordenada / desordenada requerida -->
-            <ul>
-                <li>Arquitectura de microservicios con Docker y contenedores.</li>
-                <li>Diseño y topología de redes seguras en Cisco Packet Tracer.</li>
-                <li>Desarrollo de pipelines RAG e interfaces inteligentes.</li>
-            </ul>
-
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Pantalla mostrando código fuente">
-        </section>
-
-        <!-- SECCIÓN 3: FORMULARIO DE CONTACTO -->
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Te interesa colaborar en un proyecto o resolver una duda técnica? Envíame un mensaje directo.</p>
-
-            <form action="#" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
-
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </section>
-
-    </main>
-
-    <!-- PIE DE PÁGINA  -->
-    <footer>
-        <p>&copy; 2026 Portafolio Personal. Visita mi perfil de <a href="https://github.com/James-gosling" target="_blank" rel="noopener noreferrer" style="color: #4ecca3;">GitHub</a>.</p>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Portafolio Profesional de Ingeniería TI. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="#inicio">Volver arriba</a>
+        <a href="https://github.com/James-gosling" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
