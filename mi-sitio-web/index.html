@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Portafolio Personal - Ingeniería & Desarrollo</title>
+   
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
+        header { background: #1a1a2e; color: #fff; padding: 1rem 2rem; }
+        nav ul { list-style: none; display: flex; gap: 1.5rem; padding: 0; }
+        nav a { color: #4ecca3; text-decoration: none; font-weight: bold; }
+        main { padding: 2rem; max-width: 900px; margin: auto; }
+        section { margin-bottom: 2.5rem; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 10px; }
+        form { display: flex; flexDirection: column; gap: 10px; max-width: 400px; }
+        input, textarea, button { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #4ecca3; border: none; font-weight: bold; cursor: pointer; }
+        footer { background: #1a1a2e; color: #fff; text-align: center; padding: 1rem; }
+    </style>
+</head>
+<body>
+
+    
+    <!-- ENCABEZADO Y MENÚ DE NAVEGACIÓN           -->
+    
+    <header>
+        <h1>Mi Portafolio Profesional</h1>
+        <nav>
+            <ul>
+                <!-- Enlaces requeridos (1 y 2) -->
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <!-- CONTENIDO PRINCIPAL                        -->
+    
+    <main>
+
+        <!-- SECCIÓN 1: SOBRE MÍ -->
+        <section id="sobre-mi">
+            <!-- Encabezado 2 -->
+            <h2>Sobre mí</h2>
+            <!-- Párrafo 1 -->
+            <p>Bienvenido a mi sitio web. Soy estudiante de ingeniería apasionado por el desarrollo de software, la infraestructura de redes y la implementación de soluciones tecnológicas modernas.</p>
+            <!-- Imagen 1 -->
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600" alt="Espacio de trabajo con laptop y código">
+        </section>
+
+        <!-- SECCIÓN 2: PROYECTOS Y HABILIDADES -->
+        <section id="proyectos">
+            <!-- Encabezado 3 -->
+            <h2>Proyectos y Habilidades</h2>
+            <!-- Párrafo 2 -->
+            <p>A lo largo de mi formación he colaborado en diversos proyectos técnicos enfocados en automatización, arquitectura web y contenedores:</p>
+            
+            <!-- Lista ordenada / desordenada requerida -->
+            <ul>
+                <li>Arquitectura de microservicios con Docker y contenedores.</li>
+                <li>Diseño y topología de redes seguras en Cisco Packet Tracer.</li>
+                <li>Desarrollo de pipelines RAG e interfaces inteligentes.</li>
+            </ul>
+
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Pantalla mostrando código fuente">
+        </section>
+
+        <!-- SECCIÓN 3: FORMULARIO DE CONTACTO -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Te interesa colaborar en un proyecto o resolver una duda técnica? Envíame un mensaje directo.</p>
+
+            <form action="#" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA  -->
+    <footer>
+        <p>&copy; 2026 Portafolio Personal. Visita mi perfil de <a href="https://github.com/James-gosling" target="_blank" rel="noopener noreferrer" style="color: #4ecca3;">GitHub</a>.</p>
+    </footer>
+
+</body>
+</html>
