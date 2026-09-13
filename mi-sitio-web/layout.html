@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal - Layout</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- 1. ENCABEZADO PRINCIPAL (HEADER)           -->
+    <!-- ========================================== -->
+    <header class="site-header">
+        <h1 class="header-title">Mi Portafolio Profesional</h1>
+        <p class="header-subtitle">Ingeniería, Software y Arquitectura de Sistemas</p>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- 2. MENÚ DE NAVEGACIÓN (NAV)                -->
+    <!-- ========================================== -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- 3. CONTENEDOR CENTRAL: MAIN + ASIDE        -->
+    <!-- ========================================== -->
+    <div class="page-container">
+
+        <!-- (MAIN) -->
+        <main class="content-area">
+
+            <!-- SECCIÓN 1: SOBRE MÍ -->
+            <section id="sobre-mi" class="card-section">
+                <h2>Sobre mí</h2>
+                <p>Bienvenido a mi espacio web. Me enfoco en el desarrollo de software confiable, arquitectura de redes seguras e implementación de soluciones escalables.</p>
+                <img src="assets/hero.jpg" alt="Espacio de trabajo con laptop y código" class="section-image">
+            </section>
+
+            <!-- SECCIÓN 2: PROYECTOS -->
+            <section id="proyectos" class="card-section">
+                <h2>Proyectos y Especialidades</h2>
+                <p>He colaborado en proyectos técnicos orientados a la automatización de flujos y microservicios:</p>
+                <ul class="project-list">
+                    <li>Contenedores y despliegue modular con Docker.</li>
+                    <li>Modelado de topologías de red en Cisco Packet Tracer.</li>
+                    <li>Desarrollo de pipelines RAG e integraciones backend.</li>
+                </ul>
+                <img src="assets/project.jpg" alt="Pantalla mostrando código fuente" class="section-image">
+            </section>
+
+            <!-- SECCIÓN 3: FORMULARIO DE CONTACTO -->
+            <section id="contacto" class="card-section">
+                <h2>Contacto</h2>
+                <p>Si deseas colaborar en un proyecto o solicitar consultoría técnica, envía tus datos:</p>
+                <form action="#" method="POST" class="contact-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </section>
+
+        </main>
+
+        <!-- ========================================== -->
+        <!-- 4. BARRA LATERAL (ASIDE)                   -->
+        <!-- ========================================== -->
+        <aside class="sidebar-area">
+            <div class="sidebar-widget">
+                <h3>Perfil Rápido</h3>
+                <p><strong>Ubicación:</strong> Querétaro, México</p>
+                <p><strong>Enfoque:</strong> Backend & Cyber</p>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Stack Principal</h3>
+                <ul class="tag-list">
+                    <li>Python / Node.js</li>
+                    <li>Docker</li>
+                    <li>Linux CLI</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Aviso</h3>
+                <p>Sitio actualizado y optimizado con arquitectura semántica HTML5 y CSS3.</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 5. PIE DE PÁGINA (FOOTER)                  -->
+    <!-- ========================================== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Portafolio Personal. Visita mi perfil de <a href="https://github.com/James-gosling" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+    </footer>
+
+</body>
+</html>
