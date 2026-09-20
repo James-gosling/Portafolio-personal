@@ -1,4 +1,4 @@
-# Portafolio Profesional & Ecosistema Web - Ingeniería de Software & TI
+# Portafolio Profesional & Ecosistema Web - Programación para Internet
 
 Repositorio central correspondiente a los proyectos y prácticas del curso *Programación para Internet* en la Universidad Anáhuac. Contiene implementaciones modulares de arquitectura web, diseño responsivo, estilización avanzada y validaciones dinámicas del lado del cliente.
 
@@ -6,10 +6,10 @@ Repositorio central correspondiente a los proyectos y prácticas del curso *Prog
 
 ## 🌐 Despliegues en Producción (GitHub Pages)
 
-* **Actividad 5 — Portafolio Personal & Layout Semántico:**  
+* **Portafolio Personal & Layout Semántico:**  
   [https://james-gosling.github.io/Portafolio-personal/mi-sitio-web/layout.html](https://james-gosling.github.io/Portafolio-personal/mi-sitio-web/layout.html)
 
-* **Portal Stark Industries — Formulario & Validación JS:**  
+* **Formulario interactivo JS — Portal Stark Industries:**  
   [https://james-gosling.github.io/Portafolio-personal/formulario-acceso/index.html](https://james-gosling.github.io/Portafolio-personal/formulario-acceso/index.html)
 
 ---
