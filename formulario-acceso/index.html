@@ -3,109 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acceso al Sistema | Registro de Credenciales</title>
-  <!-- Vinculación de Hoja de Estilos Externa -->
+  <title>Stark Industries | Portal de Acceso J.A.R.V.I.S.</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <main class="portal-container">
-    <header class="form-header">
-      <div class="status-badge">SECURE PROTOCOL // TLS 1.3</div>
-      <h1>Registro de Acceso Técnico</h1>
-      <p>Generación de credenciales para ingenieros y administradores de sistemas.</p>
+  <div class="arc-glow-background"></div>
+
+  <main class="stark-terminal">
+    <!-- Encabezado Corporativo Stark -->
+    <header class="terminal-header">
+      <div class="brand-row">
+        <div class="arc-reactor-icon"></div>
+        <div class="brand-meta">
+          <span class="corp-name">STARK INDUSTRIES</span>
+          <span class="protocol-id">J.A.R.V.I.S. DEFENSE MAINFRAME // LEVEL 7 CLEARANCE</span>
+        </div>
+      </div>
+      <h1 class="terminal-title">Autorización de Credenciales de Ingeniería</h1>
+      <p class="terminal-subtitle">Registro de personal táctico, arquitectos de sistemas y telemetría de armaduras Mark.</p>
     </header>
 
     <!-- FORMULARIO PRINCIPAL -->
-    <form id="accessForm" class="tech-form" novalidate>
+    <form id="starkForm" class="stark-form" novalidate>
       
       <!-- 1. Nombre Completo -->
-      <div class="form-group" id="group-fullname">
-        <label for="fullname">Nombre del Operador <span class="required">*</span></label>
-        <input type="text" id="fullname" name="fullname" placeholder="Ej. Rodrigo Valdespino" autocomplete="off">
-        <span class="error-msg" id="error-fullname"></span>
+      <div class="control-group" id="group-fullname">
+        <label for="fullname">Identificador de Agente / Ingeniero <span class="req">*</span></label>
+        <input type="text" id="fullname" name="fullname" placeholder="Ej. Anthony E. Stark" autocomplete="off">
+        <span class="error-text" id="error-fullname"></span>
       </div>
 
       <!-- 2. Correo Electrónico -->
-      <div class="form-group" id="group-email">
-        <label for="email">Correo Institucional / Dev <span class="required">*</span></label>
-        <input type="email" id="email" name="email" placeholder="operador@dominio.com" autocomplete="off">
-        <span class="error-msg" id="error-email"></span>
+      <div class="control-group" id="group-email">
+        <label for="email">Enlace de Comunicaciones Seguras (Email) <span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="operador@starkindustries.com" autocomplete="off">
+        <span class="error-text" id="error-email"></span>
       </div>
 
-      <!-- Fila Doble: Teléfono y Rol -->
-      <div class="form-row">
-        <!-- 3. Teléfono -->
-        <div class="form-group" id="group-phone">
-          <label for="phone">Teléfono de Enlace</label>
-          <input type="tel" id="phone" name="phone" placeholder="+52 (442) 000-0000">
-          <span class="error-msg" id="error-phone"></span>
+      <!-- Fila Doble: Teléfono y División -->
+      <div class="form-grid-2">
+        <!-- 3. Teléfono Satelital -->
+        <div class="control-group" id="group-phone">
+          <label for="phone">Canal Satelital Cifrado (Teléfono)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (212) STARK-01">
+          <span class="error-text" id="error-phone"></span>
         </div>
 
-        <!-- 4. Lista Desplegable (Select) -->
-        <div class="form-group" id="group-role">
-          <label for="role">Rol en Infraestructura <span class="required">*</span></label>
-          <select id="role" name="role">
-            <option value="">-- Seleccionar Nivel --</option>
-            <option value="cloud">Cloud / DevOps Engineer</option>
-            <option value="security">SecOps / Defensive Cyber</option>
-            <option value="software">Software Architecture</option>
+        <!-- 4. Select: División de Ingeniería -->
+        <div class="control-group" id="group-division">
+          <label for="division">División Técnica Destino <span class="req">*</span></label>
+          <select id="division" name="division">
+            <option value="">-- Seleccione División --</option>
+            <option value="avionics">Mark Armor Avionics & Flight Control</option>
+            <option value="arc">Arc Reactor Clean Energy Matrix</option>
+            <option value="cyber">Defensive Cyber-Warfare & Cryptography</option>
+            <option value="ai">Neural AI & Synthetic Cognition (J.A.R.V.I.S. Core)</option>
           </select>
-          <span class="error-msg" id="error-role"></span>
+          <span class="error-text" id="error-division"></span>
         </div>
       </div>
 
-      <!-- 5. Contraseña -->
-      <div class="form-group" id="group-password">
-        <label for="password">Llave de Acceso (Password) <span class="required">*</span></label>
-        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres">
-        <span class="error-msg" id="error-password"></span>
+      <!-- 5. Contraseña Criptográfica -->
+      <div class="control-group" id="group-password">
+        <label for="password">Llave Biométrica Digital (Password) <span class="req">*</span></label>
+        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres alfanuméricos">
+        <span class="error-text" id="error-password"></span>
       </div>
 
-      <!-- 6. Botones de Opción (Radio Buttons) -->
-      <div class="form-group" id="group-environment">
-        <label class="section-label">Entorno de Despliegue Asignado <span class="required">*</span></label>
-        <div class="radio-grid">
-          <label class="radio-option">
-            <input type="radio" name="environment" value="development">
-            <span class="custom-radio"></span>
-            Dev-Cluster
+      <!-- 6. Radio Buttons: Complejo Operativo -->
+      <div class="control-group" id="group-facility">
+        <label class="group-title">Complejo Operativo de Despliegue <span class="req">*</span></label>
+        <div class="options-wrapper">
+          <label class="stark-radio">
+            <input type="radio" name="facility" value="tower">
+            <span class="radio-indicator"></span>
+            Stark Tower (NYC)
           </label>
-          <label class="radio-option">
-            <input type="radio" name="environment" value="staging">
-            <span class="custom-radio"></span>
-            Staging
+          <label class="stark-radio">
+            <input type="radio" name="facility" value="compound">
+            <span class="radio-indicator"></span>
+            Upstate Research Facility
           </label>
-          <label class="radio-option">
-            <input type="radio" name="environment" value="production">
-            <span class="custom-radio"></span>
-            Prod-Fortress
+          <label class="stark-radio">
+            <input type="radio" name="facility" value="armory">
+            <span class="radio-indicator"></span>
+            Sub-Level 4 Armor Vault
           </label>
         </div>
-        <span class="error-msg" id="error-environment"></span>
+        <span class="error-text" id="error-facility"></span>
       </div>
 
-      <!-- 7. Casilla de Verificación (Checkbox) -->
-      <div class="form-group" id="group-terms">
-        <label class="checkbox-option">
-          <input type="checkbox" id="terms" name="terms">
-          <span class="custom-checkbox"></span>
-          Acepto las políticas de Zero Trust y auditoría de accesos. <span class="required">*</span>
+      <!-- 7. Checkbox: Protocolo de Confidencialidad -->
+      <div class="control-group" id="group-nda">
+        <label class="stark-checkbox">
+          <input type="checkbox" id="nda" name="nda">
+          <span class="checkbox-indicator"></span>
+          Ratifico el acuerdo de no divulgación de tecnología Stark y la supervisión de J.A.R.V.I.S. <span class="req">*</span>
         </label>
-        <span class="error-msg" id="error-terms"></span>
+        <span class="error-text" id="error-nda"></span>
       </div>
 
-      <!-- Notificación de Éxito Global -->
-      <div id="formSuccess" class="success-banner" role="alert"></div>
+      <!-- Banner de Verificación y Éxito -->
+      <div id="statusReport" class="status-box" role="status"></div>
 
-      <!-- Botón de Envío -->
-      <button type="submit" id="submitBtn" class="btn-primary">
-        <span>Provisionar Acceso</span>
+      <!-- Botón de Ejecución -->
+      <button type="submit" id="submitBtn" class="stark-button">
+        <span>INICIAR PROVISIONAMIENTO // J.A.R.V.I.S.</span>
       </button>
+
+      <div class="footer-note">
+        CONFIDENTIAL // FOR AUTHORIZED STARK INDUSTRIES PERSONNEL ONLY // © 2026
+      </div>
     </form>
   </main>
 
-  <!-- Vinculación del Script JS Externo -->
   <script src="app.js"></script>
 </body>
 </html>
