@@ -1,1 +1,238 @@
+/* ==========================================================================
+   1. VARIABLES CSS Y CONFIGURACIÓN BASE (:root)
+   ========================================================================== */
+:root {
+  --bg-canvas: #090d13;
+  --bg-card: #161b22;
+  --bg-input: #0d1117;
+  --border-default: #30363d;
+  --border-focus: #58a6ff;
+  --border-error: #f85149;
+  --text-main: #f0f6fc;
+  --text-muted: #8b949e;
+  --accent-cyan: #38bdf8;
+  --accent-green: #3fb950;
+  --radius: 8px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
 
+/* Reset Universal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: var(--font-stack);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ==========================================================================
+   2. CONTENEDOR Y CABECERA DEL FORMULARIO
+   ========================================================================== */
+.portal-container {
+  width: 100%;
+  max-width: 580px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+.form-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-default);
+  padding-bottom: 16px;
+}
+
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.form-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.form-header p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   3. DISTRIBUCIÓN DE CAMPOS (LAYOUT & BOX MODEL)
+   ========================================================================== */
+.tech-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.section-label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.required {
+  color: var(--border-error);
+}
+
+/* Inputs, Selects */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: var(--transition);
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+}
+
+/* ==========================================================================
+   4. RADIO BUTTONS & CHECKBOXES PERSONALIZADOS
+   ========================================================================== */
+.radio-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.radio-option,
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-option:hover,
+.checkbox-option:hover {
+  color: var(--text-main);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--accent-cyan);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   5. VALIDACIÓN: ESTADOS DE ERROR Y ÉXITO
+   ========================================================================== */
+.form-group.has-error input,
+.form-group.has-error select {
+  border-color: var(--border-error);
+  background-color: rgba(248, 81, 73, 0.04);
+}
+
+.error-msg {
+  font-size: 0.78rem;
+  color: var(--border-error);
+  min-height: 16px;
+  font-weight: 500;
+}
+
+.success-banner {
+  display: none;
+  background: rgba(63, 185, 80, 0.12);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  text-align: center;
+  font-family: var(--font-mono);
+}
+
+.success-banner.active {
+  display: block;
+}
+
+/* ==========================================================================
+   6. BOTÓN DE ENVÍO
+   ========================================================================== */
+.btn-primary {
+  background: linear-gradient(180deg, #1f6feb 0%, #1158c7 100%);
+  border: 1px solid #388bfd;
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.btn-primary:hover {
+  background: #388bfd;
+  box-shadow: 0 4px 14px rgba(31, 111, 235, 0.4);
+}
+
+@media (max-width: 520px) {
+  .form-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
