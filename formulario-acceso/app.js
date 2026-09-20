@@ -1,152 +1,155 @@
-// Esperar a que todo el HTML esté cargado antes de ejecutar el script
-document.addEventListener("DOMContentLoaded", () => {
-  // Referencia al formulario y al banner de confirmación
-  const form = document.getElementById("accessForm");
-  const successBanner = document.getElementById("formSuccess");
+/**
+ * STARK INDUSTRIES // PROTOCOLO DE AUTORIZACIÓN J.A.R.V.I.S.
+ * Validación de campos, expresiones regulares y bloqueo de envío preventivo.
+ */
 
-  // Captura de los campos del formulario por su ID
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("starkForm");
+  const statusReport = document.getElementById("statusReport");
+
+  // Mapeo de elementos
   const fields = {
     fullname: document.getElementById("fullname"),
     email: document.getElementById("email"),
-    role: document.getElementById("role"),
+    phone: document.getElementById("phone"),
+    division: document.getElementById("division"),
     password: document.getElementById("password"),
-    terms: document.getElementById("terms"),
-    environment: () => document.querySelector('input[name="environment"]:checked')
+    nda: document.getElementById("nda"),
+    facility: () => document.querySelector('input[name="facility"]:checked')
   };
 
-  // Muestra el mensaje de error y resalta el campo en rojo
-  const setError = (elementId, message) => {
-    const group = document.getElementById(`group-${elementId}`);
-    const errorSpan = document.getElementById(`error-${elementId}`);
-    if (group) group.classList.add("has-error");
-    if (errorSpan) errorSpan.textContent = message;
+  // Asignar error visual en el HUD
+  const triggerError = (id, message) => {
+    const group = document.getElementById(`group-${id}`);
+    const errorSpan = document.getElementById(`error-${id}`);
+    if (group) group.classList.add("error-state");
+    if (errorSpan) errorSpan.textContent = `[!] ERROR // ${message}`;
   };
 
-  // Limpia el mensaje y retira el borde de error
-  const clearError = (elementId) => {
-    const group = document.getElementById(`group-${elementId}`);
-    const errorSpan = document.getElementById(`error-${elementId}`);
-    if (group) group.classList.remove("has-error");
+  // Restablecer estado normal
+  const clearErrorState = (id) => {
+    const group = document.getElementById(`group-${id}`);
+    const errorSpan = document.getElementById(`error-${id}`);
+    if (group) group.classList.remove("error-state");
     if (errorSpan) errorSpan.textContent = "";
   };
 
-  // Expresión regular para comprobar estructura básica de correo
-  const isValidEmail = (email) => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email.trim());
+  // Validador Regex de correo
+  const isEmailStructureValid = (email) => {
+    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.trim());
   };
 
-  // 1. Validación de nombre (campo obligatorio y longitud mínima)
-  const validateFullname = () => {
+  // 1. Identificador de Agente
+  const checkFullname = () => {
     const val = fields.fullname.value.trim();
     if (val === "") {
-      setError("fullname", "El nombre completo es obligatorio.");
+      triggerError("fullname", "Identificador de operador requerido.");
       return false;
     }
     if (val.length < 3) {
-      setError("fullname", "Debe contener al menos 3 caracteres.");
+      triggerError("fullname", "Mínimo 3 caracteres para registro táctico.");
       return false;
     }
-    clearError("fullname");
+    clearErrorState("fullname");
     return true;
   };
 
-  // 2. Validación de correo (obligatorio y formato válido)
-  const validateEmail = () => {
+  // 2. Comunicaciones Seguras
+  const checkEmail = () => {
     const val = fields.email.value.trim();
     if (val === "") {
-      setError("email", "El correo electrónico es obligatorio.");
+      triggerError("email", "Canal de enlace obligatorio.");
       return false;
     }
-    if (!isValidEmail(val)) {
-      setError("email", "Ingresa un formato de correo válido (ej. usuario@dominio.com).");
+    if (!isEmailStructureValid(val)) {
+      triggerError("email", "Formato de cifrado inválido (usuario@dominio.com).");
       return false;
     }
-    clearError("email");
+    clearErrorState("email");
     return true;
   };
 
-  // 3. Validación de lista desplegable (selección obligatoria)
-  const validateRole = () => {
-    if (fields.role.value === "") {
-      setError("role", "Selecciona una opción de la lista.");
+  // 3. División Técnica
+  const checkDivision = () => {
+    if (fields.division.value === "") {
+      triggerError("division", "Seleccione una división autorizada.");
       return false;
     }
-    clearError("role");
+    clearErrorState("division");
     return true;
   };
 
-  // 4. Validación de contraseña (mínimo 8 caracteres)
-  const validatePassword = () => {
+  // 4. Llave Biometría / Password
+  const checkPassword = () => {
     const val = fields.password.value;
     if (val === "") {
-      setError("password", "La contraseña es obligatoria.");
+      triggerError("password", "Llave criptográfica requerida.");
       return false;
     }
     if (val.length < 8) {
-      setError("password", `Mínimo 8 caracteres (actualmente tienes ${val.length}).`);
+      triggerError("password", `Cifrado débil: ${val.length}/8 caracteres mínimos.`);
       return false;
     }
-    clearError("password");
+    clearErrorState("password");
     return true;
   };
 
-  // 5. Validación de radio button (al menos uno seleccionado)
-  const validateEnvironment = () => {
-    if (!fields.environment()) {
-      setError("environment", "Selecciona un entorno de trabajo.");
+  // 5. Complejo Operativo (Radio)
+  const checkFacility = () => {
+    if (!fields.facility()) {
+      triggerError("facility", "Asignación de base obligatoria.");
       return false;
     }
-    clearError("environment");
+    clearErrorState("facility");
     return true;
   };
 
-  // 6. Validación de casilla de verificación (checkbox obligatorio)
-  const validateTerms = () => {
-    if (!fields.terms.checked) {
-      setError("terms", "Debes marcar esta casilla para continuar.");
+  // 6. Acuerdo NDA (Checkbox)
+  const checkNDA = () => {
+    if (!fields.nda.checked) {
+      triggerError("nda", "Aceptación de directiva de seguridad Stark requerida.");
       return false;
     }
-    clearError("terms");
+    clearErrorState("nda");
     return true;
   };
 
-  // Validaciones en tiempo real al interactuar con los campos
-  fields.fullname.addEventListener("blur", validateFullname);
-  fields.email.addEventListener("blur", validateEmail);
-  fields.role.addEventListener("change", validateRole);
+  // Monitoreo en tiempo real
+  fields.fullname.addEventListener("blur", checkFullname);
+  fields.email.addEventListener("blur", checkEmail);
+  fields.division.addEventListener("change", checkDivision);
   fields.password.addEventListener("input", () => {
-    if (fields.password.value.length >= 8) clearError("password");
+    if (fields.password.value.length >= 8) clearErrorState("password");
   });
-  fields.terms.addEventListener("change", validateTerms);
-  document.querySelectorAll('input[name="environment"]').forEach((radio) => {
-    radio.addEventListener("change", validateEnvironment);
+  fields.nda.addEventListener("change", checkNDA);
+  document.querySelectorAll('input[name="facility"]').forEach((r) => {
+    r.addEventListener("change", checkFacility);
   });
 
-  // Validación final al presionar el botón de envío
-  form.addEventListener("submit", (event) => {
-    // Evitar que la página se recargue o envíe datos con errores
-    event.preventDefault();
-    successBanner.classList.remove("active");
+  // Ejecución y verificación al enviar
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    statusReport.classList.remove("active");
 
-    // Ejecutar todas las comprobaciones
-    const isFullnameValid = validateFullname();
-    const isEmailValid = validateEmail();
-    const isRoleValid = validateRole();
-    const isPasswordValid = validatePassword();
-    const isEnvValid = validateEnvironment();
-    const isTermsValid = validateTerms();
+    const validName = checkFullname();
+    const validEmail = checkEmail();
+    const validDiv = checkDivision();
+    const validPass = checkPassword();
+    const validFac = checkFacility();
+    const validNDA = checkNDA();
 
-    // Detener el proceso si cualquiera falla
-    if (!isFullnameValid || !isEmailValid || !isRoleValid || !isPasswordValid || !isEnvValid || !isTermsValid) {
+    if (!validName || !validEmail || !validDiv || !validPass || !validFac || !validNDA) {
       return;
     }
 
-    // Mensaje de éxito si todos los campos son correctos
-    successBanner.textContent = `✓ Formulario enviado con éxito. Registro completado para ${fields.fullname.value.trim()}.`;
-    successBanner.classList.add("active");
+    // Éxito confirmado por J.A.R.V.I.S.
+    const selectedFacility = fields.facility().value.toUpperCase();
+    statusReport.innerHTML = `
+      <strong>[✓] ACCESO NIVEL 7 AUTORIZADO POR J.A.R.V.I.S.</strong><br>
+      Bienvenido a bordo, Agente ${fields.fullname.value.trim()}. Credenciales activadas en ${selectedFacility}.
+    `;
+    statusReport.classList.add("active");
 
-    // Limpiar el formulario
     form.reset();
   });
 });
