@@ -1,15 +1,15 @@
-# Portafolio Profesional & Proyectos Web - Ingeniería de Software & TI
+# Portafolio Profesional & Ecosistema Web - Ingeniería de Software & TI
 
-Repositorio central del curso *Programación para Internet* en la Universidad Anáhuac. Contiene las implementaciones modulares de arquitectura web, diseño responsivo y validación dinámica.
+Repositorio central correspondiente a los proyectos y prácticas del curso *Programación para Internet* en la Universidad Anáhuac. Contiene implementaciones modulares de arquitectura web, diseño responsivo, estilización avanzada y validaciones dinámicas del lado del cliente.
 
 ---
 
-## 🌐 Despliegues en Vivo (GitHub Pages)
+## 🌐 Despliegues en Producción (GitHub Pages)
 
-* **Actividad 5 - Portafolio y Layout Semántico:**  
+* **Actividad 5 — Portafolio Personal & Layout Semántico:**  
   [https://james-gosling.github.io/Portafolio-personal/mi-sitio-web/layout.html](https://james-gosling.github.io/Portafolio-personal/mi-sitio-web/layout.html)
 
-* **Práctica de Formulario & Validaciones JS:**  
+* **Portal Stark Industries — Formulario & Validación JS:**  
   [https://james-gosling.github.io/Portafolio-personal/formulario-acceso/index.html](https://james-gosling.github.io/Portafolio-personal/formulario-acceso/index.html)
 
 ---
@@ -18,17 +18,17 @@ Repositorio central del curso *Programación para Internet* en la Universidad An
 
 ```text
 Portafolio-personal/
-├── README.md               # Documentación general y accesos a despliegues
+├── README.md               # Documentación general y control de versiones
 │
-├── mi-sitio-web/           # Actividad 5: Diseño y Maquetación Modular
-│   ├── layout.html         # HTML5 Semántico (header, nav, main, aside, footer)
-│   ├── layout.css          # Estilos externos (Flexbox, Dark Theme, :hover)
-│   └── assets/             # Recursos estáticos locales (favicon, imágenes)
-│       ├── favicon.ico
-│       ├── hero.png
-│       └── project.jpg
+├── mi-sitio-web/           # Módulo 1: Portafolio Profesional (Actividad 5)
+│   ├── layout.html         # Maquetación semántica HTML5 (header, nav, main, aside, footer)
+│   ├── layout.css          # Estilos externos (Flexbox 70/30, Dark Theme, :hover, media queries)
+│   └── assets/             # Recursos estáticos locales
+│       ├── favicon.ico     # Ícono de pestaña
+│       ├── hero.png        # Imagen principal de cabecera
+│       └── project.jpg     # Captura representativa de proyecto técnico
 │
-└── formulario-acceso/      # Formulario Web Interactivo con Validaciones JS
-    ├── index.html          # Estructura del formulario (7 controles de entrada)
-    ├── styles.css          # Estilos personalizados (Dark Theme, estados focus/error)
-    └── app.js              # Lógica de validación DOM (Regex, submit preventDefault)
+└── formulario-acceso/      # Módulo 2: Terminal Stark Industries (Formulario con JS)
+    ├── index.html          # Formulario táctico con 7 tipos de entradas de datos
+    ├── styles.css          # Sistema de diseño HUD Stark (Arc Reactor Cyan, variables :root)
+    └── app.js              # Lógica de validación DOM, expresiones regulares y control de eventos
