@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  line-height: 1.5;
+}
+
+h1 {
+  color: #1a3c6d;
+}
+
+button {
+  margin-right: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #1a3c6d;
+  background: #f3f7ff;
+  color: #1a3c6d;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.destacado {
+  background-color: #fff2b2;
+  font-weight: 700;
+}
