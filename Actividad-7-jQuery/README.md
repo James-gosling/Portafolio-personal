@@ -8,7 +8,7 @@ Proyecto correspondiente a la **Actividad 7** del curso *Programación para Inte
 
 El proyecto se encuentra publicado y accesible en la raíz del entorno:
 
-* **Acceso en Vivo:** [https://james-gosling.github.io/Actividad-7-jQuery/](https://james-gosling.github.io/Actividad-7-jQuery/)
+* **Acceso en Vivo:** https://james-gosling.github.io/Portafolio-personal/Actividad-7-jQuery/index.html 
 
 ---
 
