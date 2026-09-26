@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stark Labs | Laboratorio Interactivo jQuery</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Incorporación de la librería jQuery vía CDN Oficial -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <main class="terminal-container">
+    <!-- Un Título -->
+    <header class="header-section">
+      <h1 id="lab-title">Protocolo de Telemetría Stark // J.A.R.V.I.S. Core</h1>
+    </header>
+
+    <!-- Tres Párrafos -->
+    <section class="description-section">
+      <p id="intro-p" class="terminal-text">
+        El presente entorno interactivo ejecuta la suite de diagnóstico rápido para la telemetría de armaduras Mark en tiempo real.
+      </p>
+      <p class="terminal-text">
+        A través de la librería jQuery se implementa manipulación avanzada del DOM, selectores jerárquicos y control reactivo de eventos.
+      </p>
+      <p class="terminal-text">
+        Los componentes modulares responden a directivas de inspección estructural, transiciones dinámicas y filtrado de armaduras activas.
+      </p>
+    </section>
+
+    <!-- Tres Botones -->
+    <section class="controls-section">
+      <button id="btn-toggle-suits" class="stark-btn">Desplegar / Ocultar Armaduras</button>
+      <button id="btn-highlight-dom" class="stark-btn">Inspección de Jerarquía (DOM)</button>
+      <button id="btn-fade-reset" class="stark-btn">Reinicio de Telemetría (Fade)</button>
+    </section>
+
+    <!-- Cinco Elementos del Mismo Tipo (Tarjetas Tácticas de Armaduras) -->
+    <section class="suits-grid" id="hangar-bay">
+      <div class="suit-card" data-mark="III">
+        <h4 class="card-title">Mark III</h4>
+        <span class="suit-status">Blindaje Dorado</span>
+      </div>
+      <div class="suit-card" data-mark="V">
+        <h4 class="card-title">Mark V</h4>
+        <span class="suit-status">Modo Maletín</span>
+      </div>
+      <div class="suit-card" data-mark="VII">
+        <h4 class="card-title">Mark VII</h4>
+        <span class="suit-status">Ensamblaje Táctico</span>
+      </div>
+      <div class="suit-card" data-mark="XLII">
+        <h4 class="card-title">Mark XLII</h4>
+        <span class="suit-status">Telemetría Autónoma</span>
+      </div>
+      <div class="suit-card" data-mark="LXXXV">
+        <h4 class="card-title">Mark LXXXV</h4>
+        <span class="suit-status">Nanotecnología Arc</span>
+      </div>
+    </section>
+
+    <!-- Formulario Sencillo con Dos Campos -->
+    <section class="form-container">
+      <h3 class="form-title">Monitoreo de Operador</h3>
+      <form id="operator-form">
+        <div class="field-group">
+          <label for="operator-input">Indicativo de Operador:</label>
+          <input type="text" id="operator-input" placeholder="Ej. Tony Stark" autocomplete="off">
+        </div>
+
+        <div class="field-group">
+          <label for="clearance-select">Nivel de Autorización:</label>
+          <select id="clearance-select">
+            <option value="standard">Nivel 4 - Técnico</option>
+            <option value="tactical">Nivel 6 - Operativo</option>
+            <option value="omega">Nivel 7 - Comando Omega</option>
+          </select>
+        </div>
+      </form>
+
+      <!-- Panel de Registro Dinámico de Eventos -->
+      <div id="log-output" class="hud-log">En espera de interacción del operador...</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
